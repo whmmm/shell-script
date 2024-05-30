@@ -6,7 +6,7 @@ NODE_EXPORTER_VERSION="1.8.1"
 # 清华大学镜像站地址
 #MIRROR_URL="https://mirrors.tuna.tsinghua.edu.cn/github-release/prometheus/node_exporter"
 # 设置要安装的 Node Exporter 版本
-NODE_EXPORTER_VERSION="1.3.1"
+NODE_EXPORTER_VERSION="1.8.1"
 
 # 使用 Cloudflare 的 CDN 服务加速 GitHub 下载
 CDN_URL="https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz"
