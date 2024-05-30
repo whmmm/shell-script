@@ -11,7 +11,9 @@ TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
 
 # 下载 Node Exporter 压缩包
-curl -LO ${MIRROR_URL}/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
+downloadUrl=${MIRROR_URL}/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
+echo "下载地址 $downloadUrl"
+curl -LO $downloadUrl
 
 # 解压 Node Exporter 压缩包
 tar xvf node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
