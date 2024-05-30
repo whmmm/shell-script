@@ -4,16 +4,21 @@
 NODE_EXPORTER_VERSION="1.8.1"
 
 # 清华大学镜像站地址
-MIRROR_URL="https://mirrors.tuna.tsinghua.edu.cn/github-release/prometheus/node_exporter"
+#MIRROR_URL="https://mirrors.tuna.tsinghua.edu.cn/github-release/prometheus/node_exporter"
+# 设置要安装的 Node Exporter 版本
+NODE_EXPORTER_VERSION="1.3.1"
+
+# 使用 Cloudflare 的 CDN 服务加速 GitHub 下载
+CDN_URL="https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz"
 
 # 创建一个临时目录来下载 Node Exporter
 TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
 
+echo $CDN_URL
 # 下载 Node Exporter 压缩包
-downloadUrl=${MIRROR_URL}/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
-echo "下载地址 $downloadUrl"
-curl -LO $downloadUrl
+curl -LO $CDN_URL
+
 
 # 解压 Node Exporter 压缩包
 tar xvf node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
